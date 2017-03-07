@@ -1,6 +1,5 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
 
@@ -10,7 +9,7 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/app/'
     },
-    plugins: [new HtmlWebpackPlugin(), new DashboardPlugin()],
+    plugins: [new HtmlWebpackPlugin()],
     module: {
         loaders: [
             {

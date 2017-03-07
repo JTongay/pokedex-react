@@ -5,7 +5,6 @@
   "main": "./src/app/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dashboard -- node ./src/app/js/index.js",
     "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1234 --history-api-fallback"
   },
   "repository": {
