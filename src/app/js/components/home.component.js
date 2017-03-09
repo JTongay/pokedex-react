@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import axios from 'axios'
+import {Route, Router, Link} from 'react-router'
 
 require('../../scss/home.scss')
 
@@ -26,7 +27,11 @@ const HomeComponent = React.createClass({
     let numOfGens = this.state.gens;
     numOfGens = numOfGens.map((gen, index)=>{
       return (
-        <li key={gen.toString()}><img src="http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest?cb=20150418234807" /></li>
+        <li key={gen.toString()}>
+          <Link to={"gen/" + gen}>
+            <img src="http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest?cb=20150418234807" />
+          </Link>
+        </li>
       )
     })
 
