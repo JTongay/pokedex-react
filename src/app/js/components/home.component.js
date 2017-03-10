@@ -26,6 +26,7 @@ const HomeComponent = React.createClass({
     //Repeat image to total number of generations
     let numOfGens = this.state.gens;
     numOfGens = numOfGens.map((gen, index)=>{
+      console.log("booyah");
       return (
         <li key={gen.toString()}>
           <Link to={"gen/" + gen}>
