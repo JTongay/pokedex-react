@@ -4,7 +4,7 @@ const SingleGenComponent = React.createClass({
   render () {
     return (
     <div>
-      <h1>Here is a single generation</h1>
+      <h1>Single</h1>
     </div>
     )
   }
