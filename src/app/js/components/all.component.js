@@ -2,6 +2,10 @@ import React, { PropTypes } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router'
 
+import SingleGenComponent from './single.component'
+
+import '../../scss/pokedex.scss'
+
 const AllGensComponent = React.createClass({
   getInitialState(){
     return {
@@ -27,14 +31,27 @@ const AllGensComponent = React.createClass({
         </li>
       )
     })
-    return (
-      <div>
-        <h1>Here are all of the gens</h1>
-        <ul>
-          {numOfGens}
-        </ul>
-      </div>
-    )
+    if(!this.props.params.id){
+      return (
+        <div>
+          <h1>Here are all of the gens</h1>
+          <ul>
+            {numOfGens}
+          </ul>
+          {this.props.children}
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <h1>Here are all of the gens</h1>
+          <ul>
+            {numOfGens}
+          </ul>
+          <SingleGenComponent />
+        </div>
+      )
+    }
   }
 })
 
