@@ -26,7 +26,7 @@ const SingleGenComponent = React.createClass({
   render () {
     return (
     <div>
-      <h1>Gen {this.props.params.id}</h1>
+      <h1>Gen {this.props.genNum}</h1>
     </div>
     )
   }

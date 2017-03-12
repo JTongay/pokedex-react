@@ -8,6 +8,7 @@ import '../../scss/pokedex.scss'
 
 const AllGensComponent = React.createClass({
   getInitialState(){
+    console.log("all: " ,this.props);
     return {
       pokemon: [],
       gens: [1,2,3,4,5,6]
@@ -31,27 +32,15 @@ const AllGensComponent = React.createClass({
         </li>
       )
     })
-    if(!this.props.params.id){
-      return (
+    return (
         <div>
           <h1>Here are all of the gens</h1>
           <ul>
             {numOfGens}
           </ul>
-          {this.props.children}
+          <SingleGenComponent genNum={this.props.params.id}/>
         </div>
       )
-    } else {
-      return (
-        <div>
-          <h1>Here are all of the gens</h1>
-          <ul>
-            {numOfGens}
-          </ul>
-          <SingleGenComponent />
-        </div>
-      )
-    }
   }
 })
 
