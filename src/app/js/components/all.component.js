@@ -8,25 +8,55 @@ import '../../scss/pokedex.scss'
 
 const AllGensComponent = React.createClass({
   getInitialState(){
-    console.log("all: " ,this.props);
     return {
       pokemon: [],
-      gens: [1,2,3,4,5,6]
+      gens: [
+        {
+          id: 1,
+          genStart: 1,
+          genEnd: 151
+        },
+        {
+          id: 2,
+          genStart: 152,
+          genEnd: 251
+        },
+        {
+          id: 3,
+          genStart: 252,
+          genEnd: 386
+        },
+        {
+          id: 4,
+          genStart: 387,
+          genEnd: 493
+        },
+        {
+          id: 5,
+          genStart: 494,
+          genEnd: 649
+        },
+        {
+          id: 6,
+          genStart: 650,
+          genEnd: 721
+        },
+      ]
     }
   },
 
   componentWillMount(){
-    axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
-      console.log(res.data);
-    })
+    // axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
+    //   console.log(res.data);
+    // })
   },
 
   render () {
     let numOfGens = this.state.gens;
     numOfGens = numOfGens.map((gen, index)=>{
       return (
-        <li key={gen.toString()}>
-          <Link to={"gen/" + gen}>
+        <li key={gen.id.toString()}>
+          <Link to={"gen/" + gen.id}>
             <img src="http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest?cb=20150418234807" />
           </Link>
         </li>
@@ -38,7 +68,7 @@ const AllGensComponent = React.createClass({
           <ul>
             {numOfGens}
           </ul>
-          <SingleGenComponent genNum={this.props.params.id}/>
+          <SingleGenComponent genNum={this.props.params.id} chosenGen={this.state.gens[this.props.params.id - 1]}/>
         </div>
       )
   }
