@@ -13,11 +13,10 @@ const SingleGenComponent = React.createClass({
     },
 
     pokeImgLoop(){
-      for(var i = 1; i < 10; i++){
+      for(let i = 1; i < 10; i++){
+        console.log(i);
         return (
-          <div>
             <img src={`https://veekun.com/dex/media/pokemon/global-link/${i}.png`}/>
-          </div>
         )
       }
     },
