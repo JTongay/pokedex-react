@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react'
 import axios from 'axios'
+import PokeImg from './single/pokeimg.component'
 
 const SingleGenComponent = React.createClass({
     getInitialState() {
@@ -7,26 +8,23 @@ const SingleGenComponent = React.createClass({
         return {
           chosenGen: this.props.chosenGen,
           generationNumber: null,
-          totalPokemon: [],
+          totalPokemon: [1,2,3,4,5,6,7,8,9,10],
           region: null
         }
     },
 
-    pokeImgLoop(){
-      for(let i = 1; i < 10; i++){
-        console.log(i);
-        return (
-            <img src={`https://veekun.com/dex/media/pokemon/global-link/${i}.png`}/>
-        )
-      }
-    },
-
     render() {
+      let pokeImg = this.state.totalPokemon
+      pokeImg = pokeImg.map((poke, index)=>{
         return (
+          <PokeImg key={index.toString()} id={poke}/>
+        )
+      })
+      return (
           <div>
             <h1>Booyah</h1>
             <h2>Gen {this.props.chosenGen.id}</h2>
-            {this.pokeImgLoop()}
+            {pokeImg}
           </div>
         )
     }
