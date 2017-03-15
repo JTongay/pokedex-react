@@ -6,9 +6,10 @@ import SingleGenComponent from './single.component'
 
 import '../../scss/pokedex.scss'
 
-const AllGensComponent = React.createClass({
-  getInitialState(){
-    return {
+export default class AllGensComponent extends React.Component{
+  constructor (props) {
+    super(props);
+    this.state = {
       pokemon: [],
       gens: [
         {
@@ -43,13 +44,13 @@ const AllGensComponent = React.createClass({
         },
       ]
     }
-  },
+  }
 
   componentWillMount(){
     // axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
     //   console.log(res.data);
     // })
-  },
+  }
 
   render () {
     let numOfGens = this.state.gens;
@@ -62,6 +63,7 @@ const AllGensComponent = React.createClass({
         </li>
       )
     })
+    console.log(this.state);
     return (
         <div>
           <h1>Here are all of the gens</h1>
@@ -72,6 +74,4 @@ const AllGensComponent = React.createClass({
         </div>
       )
   }
-})
-
-export default AllGensComponent
+}

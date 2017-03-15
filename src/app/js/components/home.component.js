@@ -4,7 +4,7 @@ import {Route, Router, Link} from 'react-router'
 
 require('../../scss/home.scss')
 
-const HomeComponent = React.createClass({
+export default class HomeComponent extends React.Component {
 
   render () {
     //Repeat image to total number of generations
@@ -16,6 +16,4 @@ const HomeComponent = React.createClass({
       </div>
     )
   }
-})
-
-export default HomeComponent
+}
