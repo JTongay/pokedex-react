@@ -70,7 +70,6 @@ export default class AllGensComponent extends React.Component{
           <ul>
             {numOfGens}
           </ul>
-          <SingleGenComponent genNum={this.props.params.id} chosenGen={this.state.gens[this.props.params.id - 1]}/>
         </div>
       )
   }
