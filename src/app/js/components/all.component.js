@@ -63,7 +63,6 @@ export default class AllGensComponent extends React.Component{
         </li>
       )
     })
-    console.log(this.state);
     return (
         <div>
           <h1>Here are all of the gens</h1>

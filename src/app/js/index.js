@@ -11,8 +11,8 @@ const App = React.createClass({
   render () {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={Home}>
-          <IndexRoute component={Layout}></IndexRoute>
+        <Route path="/" component={Layout}>
+          <IndexRoute component={Home}></IndexRoute>
           <Route path="/gen" component={AllGens}></Route>
           <Route path="/gen/:id" component={SingleGen}></Route>
         </Route>
