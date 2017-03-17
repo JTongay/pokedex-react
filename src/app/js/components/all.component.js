@@ -9,7 +9,6 @@ import '../../scss/pokedex.scss'
 export default class AllGensComponent extends React.Component{
   constructor (props) {
     super(props);
-    this.showGenPokemon = this.showGenPokemon.bind(this)
     this.state = {
       pokemon: [],
       gens: [
@@ -56,14 +55,7 @@ export default class AllGensComponent extends React.Component{
     })
   }
 
-  showGenPokemon(gen){
-    let allPokemonInGen = this.state.gens[gen]
-    return allPokemonInGen
-  }
-
   render () {
-    console.log(this.state.gens);
-    console.log(this.showGenPokemon(1));
     let numOfGens = this.state.gens;
     numOfGens = numOfGens.map((gen, index)=>{
       return (
@@ -80,8 +72,6 @@ export default class AllGensComponent extends React.Component{
           <ul>
             {numOfGens}
           </ul>
-          <p>{this.state.pokemon.name}</p>
-          <p>Height {this.state.pokemon.height}</p>
         </div>
       )
   }

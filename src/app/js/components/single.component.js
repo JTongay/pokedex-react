@@ -5,6 +5,7 @@ import PokeImg from './single/pokeimg.component'
 export default class SingleGenComponent extends React.Component {
     constructor(props) {
       super(props);
+      this.showGenPokemon = this.showGenPokemon.bind(this)
       this.state = {
           chosenGen: this.props.chosenGen,
           generationNumber: null,
@@ -13,11 +14,17 @@ export default class SingleGenComponent extends React.Component {
         }
     }
 
+    showGenPokemon(gen){
+      let parsedGen = parseInt(gen)
+      let allPokemonInGen = this.state.gens[parsedGen]
+      return allPokemonInGen
+    }
+
     render() {
       let pokeImg = this.state.totalPokemon
       pokeImg = pokeImg.map((poke, index)=>{
         return (
-          <PokeImg key={index.toString()} id={poke}/>
+          <PokeImg key={index} id={poke} showGenPokemon={this.showGenPokemon}/>
         )
       })
       return (
