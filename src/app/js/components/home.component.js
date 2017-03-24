@@ -6,9 +6,11 @@ require('../../scss/home.scss')
 
 export default class HomeComponent extends React.Component {
 
-  render () {
-    //Repeat image to total number of generations
+  constructor(props){
+    super()
+  }
 
+  render () {
     return (
       <div>
         <h1>Welcome to the React Pokedex! This was all made in React</h1>

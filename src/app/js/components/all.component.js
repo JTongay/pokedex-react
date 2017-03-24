@@ -10,7 +10,6 @@ export default class AllGensComponent extends React.Component{
   constructor (props) {
     super(props);
     this.state = {
-      pokemon: [],
       gens: [
         {
           id: 1,
@@ -44,15 +43,6 @@ export default class AllGensComponent extends React.Component{
         },
       ]
     }
-  }
-
-  componentDidMount(){
-    axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
-      console.log(res.data);
-      this.setState({
-        pokemon: res.data
-      })
-    })
   }
 
   render () {

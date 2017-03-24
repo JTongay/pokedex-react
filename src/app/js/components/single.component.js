@@ -10,15 +10,19 @@ export default class SingleGenComponent extends React.Component {
           chosenGen: this.props.chosenGen,
           generationNumber: null,
           totalPokemon: [1,2,3,4,5,6,7,8,9,10],
-          region: null
+          region: null,
+          pokemon: []
         }
     }
-
-    // showGenPokemon(gen){
-    //   let parsedGen = parseInt(gen)
-    //   let allPokemonInGen = this.state.gens[parsedGen]
-    //   return allPokemonInGen
-    // }
+    
+    componentDidMount(){
+    axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
+      console.log(res.data);
+      this.setState({
+        pokemon: res.data
+      })
+    })
+  }
 
     render() {
       console.log(this.props.route)
