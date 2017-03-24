@@ -21,6 +21,7 @@ export default class SingleGenComponent extends React.Component {
     // }
 
     render() {
+      console.log(this.props.route)
       let pokeImg = this.state.totalPokemon
       pokeImg = pokeImg.map((poke, index)=>{
         return (
