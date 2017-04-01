@@ -4,6 +4,8 @@ import {Route, Router, Link} from 'react-router'
 
 require('../../scss/home.scss')
 
+import SearchBar from './search.component'
+
 export default class HomeComponent extends React.Component {
 
   constructor(props){
@@ -15,10 +17,7 @@ export default class HomeComponent extends React.Component {
       <div>
         <h1>Welcome to the React Pokedex! This was all made in React</h1>
         <h3>To navigate to the generations, <Link to="/gen">click here</Link></h3>
-        <form>
-          <input type="text"/>
-          <input type="submit"/>
-        </form>
+        <SearchBar />
       </div>
     )
   }
