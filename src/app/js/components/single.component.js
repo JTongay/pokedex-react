@@ -14,18 +14,18 @@ export default class SingleGenComponent extends React.Component {
           pokemon: []
         }
     }
-    
+
     componentDidMount(){
     axios.get("http://pokeapi.co/api/v2/pokemon/650/").then((res)=>{
       console.log(res.data);
-      this.setState({
-        pokemon: res.data
-      })
+      // this.setState({
+      //   pokemon: res.data
+      // })
     })
   }
 
     render() {
-      console.log(this.props.route)
+      console.log(this.props)
       let pokeImg = this.state.totalPokemon
       pokeImg = pokeImg.map((poke, index)=>{
         return (
