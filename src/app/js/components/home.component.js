@@ -17,6 +17,7 @@ export default class HomeComponent extends React.Component {
       <div>
         <h1>Welcome to the React Pokedex! This was all made in React</h1>
         <h3>To navigate to the generations, <Link to="/gen">click here</Link></h3>
+        <p>Booyah</p>
         <SearchBar />
       </div>
     )
