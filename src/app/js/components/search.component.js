@@ -6,12 +6,18 @@ export default class SearchBar extends React.Component {
         super()
     }
 
+    pokeSearch(e){
+        e.preventDefault();
+        console.log(this.refs.poke.value);
+        this.props.searchForPokemon(this.refs.poke.value)
+    }
+
     render() {
         return (
             <div>
-                <form>
-                    <input type="text" />
-                    <input type="submit" />
+                <form onSubmit={this.pokeSearch.bind(this)} >
+                    <input type="text" ref="poke" />
+                    <input type="submit" value="Look Up Pokemon" />
                 </form>
             </div>
         )
