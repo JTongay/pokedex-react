@@ -59,8 +59,7 @@ export default class AllGensComponent extends React.Component{
     return (
         <div>
           <h1>Here are all of the gens</h1>
-          <ul>
-            {numOfGens}
+          <ul>{numOfGens}
           </ul>
         </div>
       )
