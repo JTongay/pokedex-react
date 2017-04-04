@@ -10,6 +10,7 @@ export default class SearchBar extends React.Component {
         e.preventDefault();
         console.log(this.refs.poke.value);
         this.props.searchForPokemon(this.refs.poke.value)
+        this.refs.poke.value = "";
     }
 
     render() {
