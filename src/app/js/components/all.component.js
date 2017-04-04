@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router'
 
-import SingleGenComponent from './single.component'
+import SingleGenComponent from './single.component';
+import PokeballsComponent from './pokeballs.component';
 
 import '../../scss/pokedex.scss'
 
@@ -49,11 +50,12 @@ export default class AllGensComponent extends React.Component{
     let numOfGens = this.state.gens;
     numOfGens = numOfGens.map((gen, index)=>{
       return (
-        <li key={gen.id.toString()}>
+        /*<li key={gen.id.toString()}>
           <Link to={"gen/" + gen.id}>
             <img src="http://vignette3.wikia.nocookie.net/youtubepoop/images/4/4c/Pokeball.png/revision/latest?cb=20150418234807" />
           </Link>
-        </li>
+        </li>*/
+        <PokeballsComponent gen={gen} />
       )
     })
     return (
