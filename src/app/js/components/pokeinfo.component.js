@@ -10,7 +10,7 @@ export default class PokeInfoComponent extends React.Component {
         return(
             <div>
                 <p>{this.props.chosenPoke.name}</p>
-                <img src={this.props.chosenPoke.sprites.front_default} alt=""/>}
+                <img src={`https://veekun.com/dex/media/pokemon/global-link/${this.props.chosenPoke.game_indices[0].game_index}.png`} alt=""/>
             </div>
         )
     }
