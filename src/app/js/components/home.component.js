@@ -32,7 +32,6 @@ export default class HomeComponent extends React.Component {
 
   search(poke) {
      axios.get("http://pokeapi.co/api/v2/pokemon/" + poke).then((res)=>{
-      console.log(res.data); 
       this.setState({
         chosenPoke: res.data
       })
