@@ -6,14 +6,24 @@ export default class PokeInfoComponent extends React.Component {
         super()
     }
 
+    shouldComponentUpdate(props) {
+        return true
+    }
+
     render(){
+        let something = this.props.chosenPoke.id
+        let pokeImg = <img src={`https://veekun.com/dex/media/pokemon/global-link/${something}.png`} alt=""/>
+
+        if(!this.props.chosenPoke.id){
+            pokeImg = '';
+        }
+
         return(
             <div>
                 <p>{this.props.chosenPoke.name}</p>
-                <img src={`https://veekun.com/dex/media/pokemon/global-link/${this.props.chosenPoke.game_indices[0].game_index}.png`} alt=""/>
+                {pokeImg}
             </div>
         )
     }
-
 
 }

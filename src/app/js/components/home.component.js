@@ -13,12 +13,10 @@ export default class HomeComponent extends React.Component {
     super()
     this.search = this.search.bind(this)
     this.state = {
-      chosenPoke: {}
+      chosenPoke: {
+        id: "",
+      }
     }
-  }
-
-  componentDidMount(){
-    
   }
 
   render () {
