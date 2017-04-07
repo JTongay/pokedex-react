@@ -49,6 +49,7 @@ export default class App extends React.Component {
 
   chooseAGen(gen){
     console.log(gen);
+    browserHistory.push("gen/" + gen)
   }
 
   render () {
@@ -56,7 +57,7 @@ export default class App extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={Layout}>
           <IndexRoute component={Home}></IndexRoute>
-          <Route path="/gen" component={AllGens} gens={this.state.gens}></Route>
+          <Route path="/gen" component={AllGens} gens={this.state.gens} chooseAGen={this.chooseAGen.bind(this)} ></Route>
           <Route path="/gen/:id" component={SingleGen}></Route>
         </Route>
       </Router>
