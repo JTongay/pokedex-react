@@ -13,7 +13,6 @@ export default class AllGensComponent extends React.Component{
   }
 
   render () {
-    console.log(this.props);
     let numOfGens = this.props.route.gens;
     numOfGens = numOfGens.map((gen, index)=>{
       return (

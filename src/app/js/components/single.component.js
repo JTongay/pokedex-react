@@ -17,11 +17,16 @@ export default class SingleGenComponent extends React.Component {
 
     render() {
       let pokeImg = this.state.totalPokemon
+      console.log(this.props);
       pokeImg = pokeImg.map((poke, index)=>{
         return (
           <PokeImg key={index} id={poke} />
         )
       })
+      let pokemonInGen = []
+      // let searchForPokeInGen = () =>{
+      //   for(let i = this.props.)
+      // }
       return (
           <div>
             <h1>Booyah</h1>

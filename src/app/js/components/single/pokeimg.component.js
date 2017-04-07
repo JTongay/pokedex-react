@@ -14,6 +14,7 @@ export default class PokeImgComponent extends React.Component {
   }
 
   render () {
+    console.log(this.props);
     return (
       <img src={`https://veekun.com/dex/media/pokemon/global-link/${this.props.id}.png`} />
     )
