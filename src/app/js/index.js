@@ -50,9 +50,6 @@ export default class App extends React.Component {
 
   chooseAGen(gen){
     browserHistory.push("gen/" + gen.id)
-    this.setState({
-      chooseAGen: gen
-    })
   }
 
   render () {
@@ -61,7 +58,7 @@ export default class App extends React.Component {
         <Route path="/" component={Layout}>
           <IndexRoute component={Home}></IndexRoute>
           <Route path="/gen" component={AllGens} gens={this.state.gens} chooseAGen={this.chooseAGen.bind(this)} ></Route>
-          <Route path="/gen/:id" component={SingleGen} chooseAGen={this.state.choseAGen} ></Route>
+          <Route path="/gen/:id" component={SingleGen}></Route>
         </Route>
       </Router>
     )
